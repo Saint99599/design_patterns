@@ -20,4 +20,13 @@ public class Triangle extends Shape {
 		this.height = height;
 	}
 
+	@Override
+    public void accept(Shap visitor) {
+        visitor.saveAsVector(this);
+    }
+
+    @Override
+    public void acceptRaster(Shap visitor) {
+        visitor.saveAsRaster(this);
+    }
 }

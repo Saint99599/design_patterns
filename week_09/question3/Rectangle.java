@@ -19,4 +19,14 @@ public class Rectangle extends Shape {
     public void setWidth(int width) {
         this.width = width;
     }
+
+    @Override
+    public void accept(Shap visitor) {
+        visitor.saveAsVector(this);
+    }
+
+    @Override
+    public void acceptRaster(Shap visitor) {
+        visitor.saveAsRaster(this);
+    }
 }

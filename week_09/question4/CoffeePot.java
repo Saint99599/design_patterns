@@ -1,8 +1,13 @@
+// CoffeePot class with mediator
 public class CoffeePot {
-    
-    public void doCoffeePot(Alarm alarm) {
-        System.out.println("I am coffe pot,... doing my task");
-        alarm.endAlarm("Coffee Pot");
+    private Mediator mediator;
+
+    public CoffeePot(Mediator mediator) {
+        this.mediator = mediator;
     }
 
+    public void doCoffeePot() {
+        System.out.println("I am coffee pot,... doing my task");
+        mediator.notify(AlarmEvent.END, "Coffee Pot");
+    }
 }

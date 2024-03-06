@@ -16,4 +16,7 @@ public abstract class Shape {
 	public void setyPos(int yPos) {
 		this.yPos = yPos;
 	}
+
+    public abstract void accept(Shap visitor);
+    public abstract void acceptRaster(Shap visitor);
 }

@@ -1,19 +1,18 @@
-public class Alarm {
-    private Sprinkler sprinkler;
-    private CoffeePot coffeePot;
+// Enumeration for alarm events
+enum AlarmEvent {
+    END
+}
 
-    public Alarm(Sprinkler sprinkler, CoffeePot coffeePot) {
-        this.sprinkler = sprinkler;
-        this.coffeePot = coffeePot;
+// Alarm class with mediator
+public class Alarm {
+    private Mediator mediator;
+
+    public Alarm(Mediator mediator) {
+        this.mediator = mediator;
     }
 
     public void doAlarm() {
         System.out.println("Alarm is sending event to all...");
-        sprinkler.doSprinkler(this);
-        coffeePot.doCoffeePot(this);
+        mediator.notify(AlarmEvent.END, "Alarm");
     }
-    public void endAlarm(String from) {
-        System.out.println("Alarm event ended from " + from);
-    }
-
 }

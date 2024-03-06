@@ -11,4 +11,14 @@ public class Circle extends Shape {
 	public void setRadius(double radius) {
 		this.radius = radius;
 	}
+
+    @Override
+    public void accept(Shap visitor) {
+        visitor.saveAsVector(this);
+    }
+
+    @Override
+    public void acceptRaster(Shap visitor) {
+        visitor.saveAsRaster(this);
+    }
 }
