@@ -1,6 +1,7 @@
-public class TVRenderer  {
-
-	public void showImage() {
+public class TVRenderer  implements Show {
+	
+	@Override
+	public void Renderer() {
 		System.out.println("Showing an image on TV...");
 	}
 }

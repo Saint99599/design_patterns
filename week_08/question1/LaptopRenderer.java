@@ -1,7 +1,7 @@
-public class LaptopRenderer {
+public class LaptopRenderer implements Show {
 	
-	
-	public void showImage() {
+	@Override
+	public void Renderer() {
 		System.out.println("Showing an image on laptop...");
 	}
 }
